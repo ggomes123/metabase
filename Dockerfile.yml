@@ -1,0 +1,21 @@
+# Use a imagem base do Metabase
+FROM metabase/metabase:latest
+
+# Defina variáveis de ambiente
+ENV MB_DB_FILE=/metabase-data/metabase.db
+ENV MB_WAIT_FOR_DB=true
+
+# Exponha a porta
+EXPOSE 3000
+
+# Copie o arquivo de configuração do Metabase (se necessário)
+# COPY metabase-config-file /path/to/metabase/config
+
+# Defina o diretório de trabalho
+WORKDIR /metabase-data
+
+# Crie um volume para persistir os dados
+VOLUME /metabase-data
+
+# Comando de entrada para iniciar o Metabase
+CMD ["java", "-jar", "metabase.jar"]
