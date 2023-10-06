@@ -2,8 +2,8 @@
 FROM metabase/metabase:latest
 
 # Defina variáveis de ambiente
-ENV MB_DB_FILE=/metabase-data/metabase.db
-ENV MB_WAIT_FOR_DB=true
+MB_DB_FILE=/metabase-data/metabase.db
+MB_WAIT_FOR_DB=true
 
 # Exponha a porta
 EXPOSE 3000
